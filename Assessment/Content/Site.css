@@ -1,0 +1,65 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: transparent !important;
+    height: 100%;
+    width: auto;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 19px;
+    padding-right: 15px;
+    background: whitesmoke;
+    border-radius: 4px;
+    height:auto;
+    width:auto;
+    max-width:1400px !important;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/  
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+html{
+    width:auto;
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:auto;
+}
+
+/* slider */
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+}
+.carousel .item{
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+    height:100%;
+    width:100%
+    
+}
+
+.bs-example{
+	margin: 20px;
+}
+@media only screen and (max-width: 768px) {
+    .carousel-inner
+{
+    height:200px;
+}
+}

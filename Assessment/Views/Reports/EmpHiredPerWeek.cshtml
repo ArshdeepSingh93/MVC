@@ -1,0 +1,65 @@
+﻿@model Assessment.ViewModels.ReportViewModel
+
+@{
+    ViewBag.Title = "EmpHiredPerWeek";
+}
+@if (ViewBag.weeks == 0)
+{
+    <h2>Employee Hired in current week </h2>
+}
+else
+{
+    <h2>Employee Hired in @ViewBag.weeks Week(s)</h2>
+}
+
+<table class="table">
+    <tr>
+        <th>
+         Week 
+        </th>
+        <th>
+            Count
+        </th>
+        <th>
+           Week Start - End Date
+        </th>
+        <th></th>
+    </tr>
+ 
+@{
+    var weeklyHiredEmployee = Model.weeklyHiredEmployee;
+
+}   
+@foreach (var item in weeklyHiredEmployee) {
+    <tr>
+        
+            @if (item.Key == 0)
+            {
+                <td>
+                    Current Week
+                </td>
+            }
+            else
+            {
+                <td>
+                    Previous Week @item.Key
+                        
+                    
+                    </td>
+                    }
+
+<td>
+            @Html.DisplayFor(modelItem => item.EmpCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+
+      
+    </tr>
+}
+
+</table>
+<hr />
+<hr />
+<h2> Employee Terminated this year :  @Model.TerminatedEmpCount</h2>  
